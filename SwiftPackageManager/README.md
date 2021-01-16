@@ -1,4 +1,4 @@
-## Welcome to the CucumberSwift CocoaPods sample!
+## Welcome to the CucumberSwift Swift Package Manager sample!
 This sample project is a detailed description of exactly the steps taken (in which order) to get CucumberSwift set up with a very basic iOS application. 
 
 > NOTE: CucumberSwift is a test runner, while this project chose to use XCUITest as the mechanism for executing those tests it could've been a unit test.
@@ -6,17 +6,13 @@ This sample project is a detailed description of exactly the steps taken (in whi
 ### Steps:
 - Create a new Xcode project (in this case I chose iOS -> "App")
 - Make sure to tick the "include tests" checkbox, or you'll have to [add the test targets yourself](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/WorkingwithTargets.html) later. 
-- Let's get CocoaPods up and running, use your terminal to navigate to the folder that contains your .xcodeproj
-- Run `pod init`
-- Run `pod install`
-- Open the resulting `.xcworkspace` file
+- Let's add CucumberSwift via SPM. Under File -> Swift Packages select "Add Package Dependency". Copy the CucumberSwift repo URL: `https://github.com/Tyler-Keith-Thompson/CucumberSwift`
+- The default settings of "Up to Next Major" are probably correct for your needs, select "Next"
+- Under "Add to Target" make sure to select your test target, it's likely named {Project}UITests
 - Create the folder that'll hold your .feature files. 
   - NOTE: This folder name is case sensitive by default CucumberSwift looks for "Features". In order to showcase this sample in full I created a folder named "AppFeatures". 
   - NOTE: I chose to add this to the {Project}UITests folder
-- Open up your `Podfile` under the `Pods` project in your workspace in Xcode
-- In the area that has your UITest target add the following line: `pod 'CucumberSwift'`
-- Run another `pod install` to actually download and install CucumberSwift now that you've added it to your Podfile
-- In your workspace right click (or control click) on the {Project}UITests folder and select "Add files to {targetName}"
+- In your project right click (or control click) on the {Project}UITests folder and select "Add files to {targetName}"
   - Ensure the correct target is selected, you want your testing target
   - Make certain that "Create Folder Reference" is selected, not "Create Groups"
   - Make sure "Copy items if needed" is UNCHECKED
@@ -96,4 +92,4 @@ public func setupSteps() {
 }
 ```
 
-Hopefully that helps you get started on your journey using CucumberSwift with CocoaPods. If you have questions or comments please use [the official CucumberSwift repo](https://github.com/Tyler-Keith-Thompson/CucumberSwift) to submit an issue or start a discussion.
+Hopefully that helps you get started on your journey using CucumberSwift with Swift Package Manager. If you have questions or comments please use [the official CucumberSwift repo](https://github.com/Tyler-Keith-Thompson/CucumberSwift) to submit an issue or start a discussion.
