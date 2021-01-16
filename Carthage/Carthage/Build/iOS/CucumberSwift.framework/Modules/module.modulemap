@@ -1,0 +1,11 @@
+framework module CucumberSwift {
+  umbrella header "CucumberSwift.h"
+
+  export *
+  module * { export * }
+}
+
+module CucumberSwift.Swift {
+    header "CucumberSwift-Swift.h"
+    requires objc
+}
